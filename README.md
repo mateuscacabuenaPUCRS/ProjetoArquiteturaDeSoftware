@@ -1,4 +1,4 @@
-# ProjetoArquiteturaDeSoftware
+# Projeto e Arquitetura De Software
 
 -  Professor: Bernardo Copstein
 -  Código: 98906-04
