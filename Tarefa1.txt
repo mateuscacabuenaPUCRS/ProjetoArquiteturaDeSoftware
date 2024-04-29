@@ -1,3 +1,0 @@
-Diferença entre Design e Arquitetura e a importância da Arquitetura nos projetos.
-
-link: https://miro.com/app/board/o9J_llA9NmE=/
