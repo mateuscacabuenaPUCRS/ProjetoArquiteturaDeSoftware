@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: scaa
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: user
+    password: password
+  datasource:
+    initialization-mode: always
+    schema-locations: classpath*:/create.sql
+    data-locations: classpath*:/insert.sql
+  sql:
+      init:
+          mode: always
+          schema-locations: classpath*:/create.sql
+          data-locations: classpath*:/insert.sql
+          encoding: UTF-8
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://nameserver:8761/eureka

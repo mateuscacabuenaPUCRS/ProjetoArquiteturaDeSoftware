@@ -1,0 +1,5 @@
+CREATE TABLE signature (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    active BOOLEAN NOT NULL,
+    expiry_date DATE NOT NULL
+);

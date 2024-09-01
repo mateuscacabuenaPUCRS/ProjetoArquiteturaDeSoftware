@@ -1,0 +1,16 @@
+server:
+  port: 8672
+spring:
+  application:
+    name: broker
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://nameserver:8761/eureka
+rabbitmq:
+  host: rabbitmq
+  port: 5672
+  username: user
+  password: password

@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "a315fa4e-c0ce-4a56-8a49-f6d4890b6186",
+		"name": "Trabalho01_ProjArq__CFLM",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29854663",
+		"_collection_link": "https://mithra-lis.postman.co/workspace/Unknown~e529845f-615a-4de8-bd8e-1587c584ab76/collection/29854663-a315fa4e-c0ce-4a56-8a49-f6d4890b6186?action=share&source=collection_link&creator=29854663"
+	},
+	"item": [
+		{
+			"name": "AppController",
+			"item": [
+				{
+					"name": "addApp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nome\",\r\n    \"monthlyCost\": 2.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/servcad/aplicativos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"aplicativos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editApp",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nome Atualizado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/servcad/aplicativos/:idAplicativo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"aplicativos",
+								":idAplicativo"
+							],
+							"variable": [
+								{
+									"key": "idAplicativo",
+									"value": "{{id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getApps",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/servcad/aplicativos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"aplicativos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "3.0",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/servcad/aplicativos/atualizacusto/:idAplicativo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"aplicativos",
+								"atualizacusto",
+								":idAplicativo"
+							],
+							"variable": [
+								{
+									"key": "idAplicativo",
+									"value": "{{id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ClientController",
+			"item": [
+				{
+					"name": "addClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Cliente\",\r\n    \"email\": \"cliente@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/servcad/clientes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editClient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Novo Cliente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/servcad/clientes/:îdCliente",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"clientes",
+								":îdCliente"
+							],
+							"variable": [
+								{
+									"key": "îdCliente",
+									"value": "{{id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getClients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/servcad/clientes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PaymentController",
+			"item": [
+				{
+					"name": "registrarPagamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"signatureId\": {{id}},\r\n    \"payedValue\": 10.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/registrarpagamento",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"registrarpagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPayments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pagamentos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pagamentos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SignatureController",
+			"item": [
+				{
+					"name": "addSignature",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": {{id}},\r\n    \"appId\": 99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/servcad/assinaturas",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"assinaturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSignatures",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/servcad/assinaturas",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"assinaturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSignatureByType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/servcad/assinaturas/:tipo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"assinaturas",
+								":tipo"
+							],
+							"variable": [
+								{
+									"key": "tipo",
+									"value": "ativas"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getClientSignatures",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/servcad/asscli/:codcli",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"asscli",
+								":codcli"
+							],
+							"variable": [
+								{
+									"key": "codcli",
+									"value": "{{id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAppSignatures",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/servcad/assapp/:codapp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"assapp",
+								":codapp"
+							],
+							"variable": [
+								{
+									"key": "codapp",
+									"value": "99"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IsSignatureActive",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/assinvalida/:codass",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"assinvalida",
+								":codass"
+							],
+							"variable": [
+								{
+									"key": "codass",
+									"value": "{{id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelSignature",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/servcad/assinaturas/:codass",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"servcad",
+								"assinaturas",
+								":codass"
+							],
+							"variable": [
+								{
+									"key": "codass",
+									"value": "{{id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000/",
+			"type": "string"
+		}
+	]
+}
